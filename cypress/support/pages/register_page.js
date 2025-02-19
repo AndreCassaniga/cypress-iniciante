@@ -25,7 +25,7 @@ const elements = {
     fields: {
         fieldName: '#user',
         fieldEmail: '#email',
-        fieldPassword: '#password'
+        fieldPassword: '#passwordx'
     },
     messages: {
         error: '#errorMessageFirstName',
