@@ -9,19 +9,19 @@ jobs:
   # o que vai ser feito nessa pipeline, teremos somente um job: rodar os testes
   cypress-run:
   #maquina que será executado
-    runs-on: ubuntu-latest 
-    # passo a passo para rodar os tests
+    runs-on: ubuntu-latest
+    # passo a passo para rodar os testes 
     steps:
       #clone do projeto
       - name: Checkout/Clone do projeto
         uses:  actions/checkout@v4
-      #Exemplo de excução no terminal
-      - name: Executar comando do terminal
-        uses: echo Andre Cassaniga
+      #Exemplo de execução no terminal
+      - name: Instalar as dependências do projeto
+        run: npm install
       #execução e config do projeto
       - name: Run testes
         uses: cypress-io/github-action@v6
-        whith:
+        with:
           record: true
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY}}
