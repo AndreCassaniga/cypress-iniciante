@@ -1,33 +1,33 @@
-# nome da pipeline
-name: Run basic testes - scheduler
-#em que momento será executada
-on:
-  schedule:
-    - cron: '0 20 * 1-11 1-5'
+# # nome da pipeline
+# name: Run basic testes - scheduler
+# #em que momento será executada
+# on:
+#   schedule:
+#     - cron: '0 20 * 1-11 1-5'
 
-jobs:
-  # o que vai ser feito nessa pipeline, teremos somente um job: rodar os testes
-  cypress-run:
-  #maquina que será executado
-    runs-on: ubuntu-latest
-    # passo a passo para rodar os testes 
-    steps:
-      #clone do projeto
-      - name: Checkout/Clone do projeto
-        uses:  actions/checkout@v4
-      #Exemplo de execução no terminal
-      - name: Instalar as dependências do projeto
-        run: npm install
-      #execução e config do projeto
-      - name: Run testes
-        uses: cypress-io/github-action@v6
-        with:
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY}}
-      #upload do
-      - name: upload do relatório
-        uses: actions/upload-artifact@v4
-        with:
-          name: my-artifact
-          path: cypress/reports/html
+# jobs:
+#   # o que vai ser feito nessa pipeline, teremos somente um job: rodar os testes
+#   cypress-run:
+#   #maquina que será executado
+#     runs-on: ubuntu-latest
+#     # passo a passo para rodar os testes 
+#     steps:
+#       #clone do projeto
+#       - name: Checkout/Clone do projeto
+#         uses:  actions/checkout@v4
+#       #Exemplo de execução no terminal
+#       - name: Instalar as dependências do projeto
+#         run: npm install
+#       #execução e config do projeto
+#       - name: Run testes
+#         uses: cypress-io/github-action@v6
+#         with:
+#           record: true
+#         env:
+#           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY}}
+#       #upload do
+#       - name: upload do relatório
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: my-artifact
+#           path: cypress/reports/html
