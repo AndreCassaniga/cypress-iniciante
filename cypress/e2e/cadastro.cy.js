@@ -9,7 +9,7 @@ const user_data = require('../fixtures/desafio.json')
 
 //screens.forEach(element => {
 
-    describe('Cadaastro de usuário', () => {
+    describe('Cadastro de usuário', () => {
 
         beforeEach('Acessando página de cadastro', () => {
             // if (element != 'desktop'){
@@ -37,7 +37,6 @@ const user_data = require('../fixtures/desafio.json')
         it('Validar campo senha vazio', () => {
             register_page.fillName(user_data.user_name)
             register_page.fillEmail(user_data.user_email)
-            //register_page.fillEmail('srgsdgsdfg')
             register_page.saveRegister()
             register_page.checkMessage('O campo senha deve ter pelo menos 6 dígitos')
         })

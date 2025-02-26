@@ -3,15 +3,14 @@
 //ELEMENTOS
 const elements = {
     buttons: {
-        btnRegister: '#btnRegister'
+        btnLogin: '#btnLogin'
     },
     fields: {
-        fieldName: '#user',
-        fieldEmail: '#email',
+        fieldEmail: '#user',
         fieldPassword: '#password'
     },
     messages: {
-        error: '#errorMessageFirstName',
+        error: '.invalid_input',
         sucessTitle: '#swal2-title',
         sucessSubTitle: '#swal2-html-container'
     }
@@ -19,14 +18,9 @@ const elements = {
 }
 //AÇÔES METODOS FUNÇÔES 
 export default {
-    saveRegister() {
-        cy.get(elements.buttons.btnRegister)
+    clickLogin() {
+        cy.get(elements.buttons.btnLogin)
             .click()
-    },
-    
-    fillName(name) {
-        cy.get(elements.fields.fieldName)
-            .type(name)
     },
     
     fillEmail(email) {
@@ -44,11 +38,11 @@ export default {
             .should('have.text', message)
     },
    
-    checkRegisterSucess(name) {
+    checkRegisterSucess(email) {
         cy.get(elements.messages.sucessTitle, {timeout: 3000})
-            .should('have.text', 'Cadastro realizado!')
+            .should('have.text', 'Login realizado')
         cy.get(elements.messages.sucessSubTitle)
-        .should('have.text',`Bem-vindo ${name}`)
+        .should('have.text',`Olá, ${email}`)
     }
 
 }

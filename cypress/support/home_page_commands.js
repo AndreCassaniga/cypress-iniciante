@@ -13,20 +13,20 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-/// <reference types="cypress" />
-const elements = {
-    imgHeader: '.header-logo',
-    btnCadastro: '.fa-lock',
-    fieldName: '#user'
-}
+// /// <reference types="cypress" />
+// const elements = {
+//     imgHeader: '.header-logo',
+//     btnCadastro: '.fa-lock',
+//     fieldName: '#user'
+// }
 
-Cypress.Commands.add('acessRegisterPage', () => {
-    cy.visit('/')
-    .get(elements.imgHeader)
+// Cypress.Commands.add('acessRegisterPage', () => {
+//     cy.visit('/')
+//     .get(elements.imgHeader)
 
-    cy.get(elements.btnCadastro)
-        .click()
+//     cy.get(elements.btnCadastro)
+//         .click()
     
-    cy.get(elements.fieldName)
-        .should('be.visible')
-})
+//     cy.get(elements.fieldName)
+//         .should('be.visible')
+// })
