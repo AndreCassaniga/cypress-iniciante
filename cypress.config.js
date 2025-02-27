@@ -12,6 +12,10 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://automationpratice.com.br/',
     defaultCommandTimeout: 5000,
+    video: true, // Habilita gravação de vídeo
+    videosFolder: "cypress/videos", // Define a pasta para salvar os vídeos
+    screenshotOnRunFailure: true, // Tira screenshots automaticamente quando um teste falha
+    screenshotsFolder: "cypress/screenshots", // Define a pasta para salvar screenshot
     // viewportWidth: 335,
     // viewportHeight: 999,
     setupNodeEvents(on, config) {
