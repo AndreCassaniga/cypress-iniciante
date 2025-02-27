@@ -14,7 +14,6 @@ const elements = {
         sucessTitle: '#swal2-title',
         sucessSubTitle: '#swal2-html-container'
     }
-
 }
 //AÇÔES METODOS FUNÇÔES 
 export default {
@@ -44,6 +43,5 @@ export default {
         cy.get(elements.messages.sucessSubTitle)
         .should('have.text',`Olá, ${email}`)
     }
-
 }
 
