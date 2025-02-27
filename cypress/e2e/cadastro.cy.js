@@ -6,7 +6,6 @@ import register_page from '../support/pages/register_page';
 const user_data = require('../fixtures/desafio.json')
 
 //const screens = ['desktop', 'iphone-xr', 'iphone-8']
-
 //screens.forEach(element => {
 
     describe('Cadastro de usuário', () => {
@@ -15,7 +14,6 @@ const user_data = require('../fixtures/desafio.json')
             // if (element != 'desktop'){
             //     cy.viewport(element)
             // }
-
             home_page.acessRegisterPage()
         })
 
@@ -56,5 +54,4 @@ const user_data = require('../fixtures/desafio.json')
             register_page.checkRegisterSucess(name)
         })
     })
-
 //});
